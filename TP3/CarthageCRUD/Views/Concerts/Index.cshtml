@@ -1,0 +1,35 @@
+﻿@model List<CarthageCRUD.Models.Domain.Concert>
+
+@{
+
+}
+
+<h1>Concerts</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var concert in Model)
+        {
+            <tr>
+                <td>@concert.Id</td>
+                <td>@concert.Name</td>
+                <td>@concert.Description</td>
+                <td>@concert.Price</td>
+                <td>@concert.Location</td>
+                <td>@concert.Date.ToString("dd-MM-yyyy")</td>
+                <td><a href="Concerts/View/@concert.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
